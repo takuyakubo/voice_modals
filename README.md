@@ -62,6 +62,20 @@ uv pip install pyaudio
 
 ## 使い方
 
+### システムテスト（初回確認推奨）
+
+まず、システムが正常に動作するか10秒間のテストを実行することをお勧めします：
+
+```bash
+uv run python test_system.py
+```
+
+このテストは：
+- tinyモデルを使用（最速）
+- 10秒間音声を録音
+- 文字起こし結果を表示
+- システムの動作確認に最適
+
 ### 基本的な使用方法
 
 ```bash
@@ -245,6 +259,12 @@ uv pip install pyaudio
 
 利用可能なマイクデバイスを確認:
 
+```bash
+uv run python check_audio_devices.py
+```
+
+または、Pythonコードで確認:
+
 ```python
 import pyaudio
 p = pyaudio.PyAudio()
@@ -260,6 +280,32 @@ CUDAとPyTorchのインストールを確認:
 ```bash
 python -c "import torch; print(torch.cuda.is_available())"
 ```
+
+## プロジェクト構造
+
+```
+voice_modals/
+├── src/voice_modals/        # メインパッケージ
+│   ├── __init__.py          # パッケージ初期化
+│   ├── __main__.py          # エントリーポイント
+│   ├── audio_capture.py     # 音声キャプチャモジュール
+│   ├── streaming_asr.py     # ASRエンジン
+│   └── cli.py               # CLIインターフェース
+├── examples/                # サンプルコード
+│   ├── basic_usage.py       # 基本的な使用例
+│   └── custom_callback.py   # カスタムコールバック例
+├── test_system.py           # システムテスト（10秒）
+├── check_audio_devices.py   # オーディオデバイス確認
+├── README.md                # このファイル
+├── QUICKSTART.md            # クイックスタートガイド
+├── CONTRIBUTING.md          # 貢献ガイドライン
+├── pyproject.toml           # プロジェクト設定（uv用）
+└── requirements.txt         # 依存関係（pip用）
+```
+
+## 貢献
+
+プロジェクトへの貢献を歓迎します！詳細は[CONTRIBUTING.md](CONTRIBUTING.md)をご覧ください。
 
 ## 謝辞
 

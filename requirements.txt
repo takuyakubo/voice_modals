@@ -1,0 +1,15 @@
+# Voice Modals - Requirements
+# For users who prefer pip over uv
+
+# Core dependencies
+openai-whisper>=20231117
+pyaudio>=0.2.13
+numpy>=1.24.0
+torch>=2.0.0
+faster-whisper>=0.10.0
+
+# Note: On macOS, you may need to install portaudio first:
+#   brew install portaudio
+#   export CFLAGS="-I/opt/homebrew/include"
+#   export LDFLAGS="-L/opt/homebrew/lib"
+#   pip install -r requirements.txt
