@@ -261,10 +261,6 @@ CUDAとPyTorchのインストールを確認:
 python -c "import torch; print(torch.cuda.is_available())"
 ```
 
-## ライセンス
-
-MIT License
-
 ## 謝辞
 
 - [OpenAI Whisper](https://github.com/openai/whisper)
