@@ -1,7 +1,7 @@
 [project]
 name = "voice-modals"
-version = "0.1.0"
-description = "Local streaming ASR system using OpenAI Whisper"
+version = "0.2.0"
+description = "Local streaming ASR and TTS system using OpenAI Whisper and Piper"
 readme = "README.md"
 requires-python = ">=3.9"
 dependencies = [
@@ -10,6 +10,9 @@ dependencies = [
     "numpy>=1.24.0",
     "torch>=2.0.0",
     "faster-whisper>=0.10.0",
+    "piper-tts>=1.2.0",
+    "phonemizer>=3.2.1",
+    "onnxruntime>=1.16.0",
 ]
 
 [project.optional-dependencies]
